@@ -75,6 +75,17 @@ In this particular analysis of mine, only variables that are a mean and standard
 # How I got my tidy dataset
 
 1. I read into R using read.table the following data sets.
+
+Description | File name | Dimensions
+------------|-----------|-----------
+Raw training data|X_train.txt|7352 x 561
+Raw test data|X_test.txt|2947 x 561
+Activity number corresponding to each record in the train data|y_train.txt|7352 x 1
+Activity number corresponding to each record in the test data|y_test.txt|2947 x 1
+Subject number corresponding to each record in the raw train data|subject_test.txt|7352 x 1
+Subject number corresponding to each record in the raw test data|subject_train.txt|2947 x 1
+Variable names|features.txt|561 x 2
+
 2. I added the variable labels as names to both the raw training and the raw test data using a row bind.
 3. For the activity and subject information that belongs to the raw training data, I column bound it to the raw training data.  I did the same for the test data.
 4. I merged the training and test data sets from step 3 using a row bind matching up their 561 columns. Thus, I produced one large data set which exceeded 25 MB as an object on R.
@@ -111,4 +122,75 @@ The definitions of some terms in the variables are as follows…
 * Z-axis: movement in the z-direction
 
 In relation to the units, the acceleration signals are measured in standard gravity units ‘g’. The body acceleration was taken from subtracting the acceleration due to gravity from the measured acceleration. And angular velocity as measured by the gyroscope is measured in radians/second.
+
+No.|Old variable|Variable in tidy data
+--|---|---
+1|Subject|subject
+2|Activity|activity
+3|tBodyAcc-mean()-X|timeBodyAcceleration-MEAN-X
+4|tBodyAcc-mean()-Y|timeBodyAcceleration-MEAN-Y
+5|tBodyAcc-mean()-Z|timeBodyAcceleration-MEAN-Z
+6|tBodyAcc-std()-X|timeBodyAcceleration-STD-X
+7|tBodyAcc-std()-Y|timeBodyAcceleration-STD-Y
+8|tBodyAcc-std()-Z|timeBodyAcceleration-STD-Z
+9|tGravityAcc-mean()-X|timeGravityAcceleration-MEAN-X
+10|tGravityAcc-mean()-Y|timeGravityAcceleration-MEAN-Y
+11|tGravityAcc-mean()-Z|timeGravityAcceleration-MEAN-Z
+12|tGravityAcc-std()-X|timeGravityAcceleration-STD-X
+13|tGravityAcc-std()-Y|timeGravityAcceleration-STD-Y
+14|tGravityAcc-std()-Z|timeGravityAcceleration-STD-Z
+15|tBodyAccJerkmean()-X|timeBodyAccelerationJerk-MEAN-X
+16|tBodyAccJerkmean()-Y|timeBodyAccelerationJerk-MEAN-Y
+17|tBodyAccJerkmean()-Z|timeBodyAccelerationJerk-MEAN-Z
+18|tBodyAccJerkstd()-X|timeBodyAccelerationJerk-STD-X
+19|tBodyAccJerkstd()-Y|timeBodyAccelerationJerk-STD-Y
+20|tBodyAccJerkstd()-Z|timeBodyAccelerationJerk-STD-Z
+21|tBodyGyro-mean()-X|timeBodyGyroscope-MEAN-X
+22|tBodyGyro-mean()-Y|timeBodyGyroscope-MEAN-Y
+23|tBodyGyro-mean()-Z|timeBodyGyroscope-MEAN-Z
+24|tBodyGyro-std()-X|timeBodyGyroscope-STD-X
+25|tBodyGyro-std()-Y|timeBodyGyroscope-STD-Y
+26|tBodyGyro-std()-Z|timeBodyGyroscope-STD-Z
+27|tBodyGyroJerkmean()-X|timeBodyGyroscopeJerk-MEAN-X
+28|tBodyGyroJerkmean()-Y|timeBodyGyroscopeJerk-MEAN-Y
+29|tBodyGyroJerkmean()-Z|timeBodyGyroscopeJerk-MEAN-Z
+30|tBodyGyroJerkstd()-X|timeBodyGyroscopeJerk-STD-X
+31|tBodyGyroJerkstd()-Y|timeBodyGyroscopeJerk-STD-Y
+32|tBodyGyroJerkstd()-Z|timeBodyGyroscopeJerk-STD-Z
+33|tBodyAccMag-mean()|timeBodyAccelerationMagnitude-MEAN
+34|tBodyAccMag-std()|timeBodyAccelerationMagnitude-STD
+35|tGravityAccMag-mean()|timeGravityAccelerationMagnitude-MEAN
+36|tGravityAccMag-std()|timeGravityAccelerationMagnitude-STD
+37|tBodyAccJerkMag-mean()|timeBodyAccelerationJerkMagnitude-MEAN
+38|tBodyAccJerkMag-std()|timeBodyAccelerationJerkMagnitude-STD
+39|tBodyGyroMag-mean()|timeBodyGyroscopeMagnitude-MEAN
+40|tBodyGyroMag-std()|timeBodyGyroscopeMagnitude-STD
+41|tBodyGyroJerkMag-mean()|timeBodyGyroscopeJerkMagnitude-MEAN
+42|tBodyGyroJerkMag-std()|timeBodyGyroscopeJerkMagnitude-STD
+43|fBodyAcc-mean()-X|frequencyBodyAcceleration-MEAN-X
+44|fBodyAcc-mean()-Y|frequencyBodyAcceleration-MEAN-Y
+45|fBodyAcc-mean()-Z|frequencyBodyAcceleration-MEAN-Z
+46|fBodyAcc-std()-X|frequencyBodyAcceleration-STD-X
+47|fBodyAcc-std()-Y|frequencyBodyAcceleration-STD-Y
+48|fBodyAcc-std()-Z|frequencyBodyAcceleration-STD-Z
+49|fBodyAcc-meanFreq()-X|frequencyBodyAccelerationJerk-MEAN-X
+50|fBodyAcc-meanFreq()-Y|frequencyBodyAccelerationJerk-MEAN-Y
+51|fBodyAcc-meanFreq()-Z|frequencyBodyAccelerationJerk-MEAN-Z
+52|fBodyAccJerkmean()-X|frequencyBodyAccelerationJerk-STD-X
+53|fBodyAccJerkmean()-Y|frequencyBodyAccelerationJerk-STD-Y
+54|fBodyAccJerkmean()-Z|frequencyBodyAccelerationJerk-STD-Z
+55|fBodyAccJerkstd()-X|frequencyBodyGyroscope-MEAN-X
+56|fBodyAccJerkstd()-Y|frequencyBodyGyroscope-MEAN-Y
+57|fBodyAccJerkstd()-Z|frequencyBodyGyroscope-MEAN-Z
+58|fBodyAccJerkmeanFreq()-X|frequencyBodyGyroscope-STD-X
+59|fBodyAccJerkmeanFreq()-Y|frequencyBodyGyroscope-STD-Y
+60|fBodyAccJerkmeanFreq()-Z|frequencyBodyGyroscope-STD-Z
+61|fBodyGyro-mean()-X|frequencyBodyAccelerationMagnitude-MEAN
+62|fBodyGyro-mean()-Y|frequencyBodyAccelerationMagnitude-STD
+63|fBodyGyro-mean()-Z|frequencyBodyAccelerationJerkMagnitude-MEAN
+64|fBodyGyro-std()-X|frequencyBodyAccelerationJerkMagnitude-STD
+65|fBodyGyro-std()-Y|frequencyBodyGyroscopeMagnitude-MEAN
+66|fBodyGyro-std()-Z|frequencyBodyGyroscopeMagnitude-STD
+67|fBodyGyro-meanFreq()-X|frequencyBodyGyroscopeJerkMagnitude-MEAN
+68|fBodyGyro-meanFreq()-Y|frequencyBodyGyroscopeJerkMagnitude-STD
 
