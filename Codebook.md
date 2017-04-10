@@ -92,15 +92,15 @@ Variable names|features.txt|561 x 2
 5. I then replaced the activity number variables i.e. 1, 2, 3, … 6 with their qualitative labels. These labels correspond to the same order of the activities as in the first paragraph in this study design (in red text). 
 6. I appropriately labelled the data set variable names with more descriptive terminology. I did this using the gsub function and regular expressions on R. For example…
 
-** “Acc” = “Acceleration”
-** “Gyro” = “Gyroscope”
-** “Mag” = “Magnitude”
-** “std” = “STD” for emphasis
-** “mean” = “MEAN” for emphasis
-** “f” = “Frequency”
-** “t” = “time”
-** “BodyBody” = “Body”
-** I also removed parentheses.
+ *“Acc” = “Acceleration”
+ * “Gyro” = “Gyroscope”
+ * “Mag” = “Magnitude”
+ * “std” = “STD” for emphasis
+ * “mean” = “MEAN” for emphasis
+ * “f” = “Frequency”
+ * “t” = “time”
+ * “BodyBody” = “Body”
+ * I also removed parentheses.
 
 7. Using the dpply function from the plyr package, I created a second, independent tidy data set with the average of each variable for each activity and each subject. This gave me a data set of dimensions of 180 x 68.
 
