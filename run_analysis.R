@@ -40,7 +40,6 @@ setwd("C:/Users/User/Google Drive/Career/Data Analysis/R/Coursera/3) Getting and
   MD1[MD1[2] == 6, 2] <- "Laying"
 
 #4)	Appropriately labels the data set with descriptive variable names.
-
   names(MD1) <- gsub("\\(|\\)", "", names(MD1))
   names(MD1) <- gsub("Acc", "Acceleration", names(MD1))
   names(MD1) <- gsub("Gyro", "Gyroscope", names(MD1))
