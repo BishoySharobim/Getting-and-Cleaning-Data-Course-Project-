@@ -46,14 +46,12 @@ setwd("C:/Users/User/Google Drive/Career/Data Analysis/R/Coursera/3) Getting and
   names(MD1) <- gsub("Mag", "Magnitude", names(MD1))
   names(MD1) <- gsub("std", "STD", names(MD1))
   names(MD1) <- gsub("mean", "MEAN", names(MD1))
-  
   names(MD1) <- gsub("^t", "time", names(MD1))
   names(MD1) <- gsub("^f", "frequency", names(MD1))
   names(MD1) <- gsub("BodyBody", "Body", names(MD1))
 
   
 #5) From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-  
   library(plyr)
   MD2 <- ddply(MD1, c("subject","activity"), numcolwise(mean))
   
