@@ -1,3 +1,6 @@
+# Purpose
+The general purpose of this project is to clean data taken from 30 subjects performing 6 activities of daily living such as walking and sitting, producing a tidy and descriptive data set.
+
 # Getting-and-Cleaning-Data-Course-Project-
 Getting and Cleaning Data Course Project 
 
